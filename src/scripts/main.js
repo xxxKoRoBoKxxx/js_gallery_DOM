@@ -11,15 +11,12 @@ function changeLargeImg(e) {
   e.preventDefault();
 
   const target = e.target;
-  let source = '';
 
   if (target.matches('.list-item__link')) {
-    source = target.href;
+    largeImg.setAttribute('src', target.href);
   } else if (target.matches('.gallery__thumb')) {
-    source = target.parentElement.href;
+    largeImg.setAttribute('src', target.parentElement.href);
   }
-
-  largeImg.setAttribute('src', source);
 }
 
 thumbs.addEventListener('click', changeLargeImg);
